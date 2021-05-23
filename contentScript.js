@@ -1,5 +1,5 @@
-chrome.storage.sync.get(['setUrl'], (e) => {
-  if (!e.setUrl) {
+chrome.storage.sync.get(['setUrl'], (result) => {
+  if (!result.setUrl) {
     var newUrl;
     do {
       newUrl = prompt('Enter a full URL to redirect reddit to (include https://) :');
@@ -9,6 +9,6 @@ chrome.storage.sync.get(['setUrl'], (e) => {
     })
     window.location = newUrl;
   } else {
-    window.location = e.setUrl;
+    window.location = result.setUrl;
   }
 })
