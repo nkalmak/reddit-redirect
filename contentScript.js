@@ -1,6 +1,6 @@
 window.onload = () => {
   chrome.storage.sync.get(['setUrl'], (e) => {
-    if (e.setUrl == undefined) {
+    if (!e.setUrl) {
       var newUrl;
       do {
         newUrl = prompt('Enter a full URL to redirect reddit to (include https://) :')
